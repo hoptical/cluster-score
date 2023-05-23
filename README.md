@@ -17,8 +17,9 @@ At the moment, these parameters have been considered:
 To calculate the cluster score, the below forumla is used:
 
 ```math
-inhomogeneity = std_dev(nodes shard size)
-score = n_replicas / (1 + inhomogeneity)
+inhomogeneity = std_{dev}(nodes shard size)
+
+score = n_{replicas} / (1 + inhomogeneity)
 ```
 
 Higher score is better. Additionally, if total data size (including replicas) exceeds the total nodes storage, the `score = -1`.
