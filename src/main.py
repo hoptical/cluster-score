@@ -65,5 +65,5 @@ if __name__ == "__main__":
     for i in range(n_nodes):
         print("Node {}: ".format(i), cluster.nodes[i].shard_list)
 
-    cluster_score = cluster.cluster_score()
+    cluster_score = round(cluster.cluster_score(), 3)
     print("Cluster Score: {} (higher is better.)".format(cluster_score))

@@ -29,22 +29,21 @@ At the moment, these parameters have been considered:
 - storage_per_node: Storage size per node
 
 ```bash
-python src/main.py --n_nodes 4 --n_shards 2 --n_replicas 2 --data_size 2 --storage_per_node 1
+python src/main.py --n_nodes 3 --n_shards 4 --n_replicas 2 --data_size 1 --storage_per_node 1
 ```
 
 Output:
 
 ```text
-Number of nodes: 4 
-Number of shards: 2 
+Number of nodes: 3 
+Number of shards: 4 
 Number of replicas: 2 
-Data size: 2 TB
+Data size: 1 TB
 Storage per node: 1 TB
 
 Cluster Allocation:
-Node 0:  [0]
-Node 1:  [0]
-Node 2:  [1]
-Node 3:  [1]
-Cluster Score: 2.0 (higher is better.)
+Node 0:  [0, 1, 3]
+Node 1:  [0, 2, 3]
+Node 2:  [1, 2]
+Cluster Score: 1.268 (higher is better.)
 ```
