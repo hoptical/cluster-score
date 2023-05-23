@@ -1,5 +1,6 @@
 from itertools import cycle
 import statistics
+import argparse
 
 
 class Node:
@@ -38,11 +39,19 @@ class Cluster:
 
 
 if __name__ == "__main__":
-    n_nodes = 4
-    n_shards = 2
-    n_replicas = 2
-    data_size = 2
-    storage_per_node = 1
+    parser = argparse.ArgumentParser(description="Cluster Allocation")
+    parser.add_argument("--n_nodes", type=int, default=4, help="Number of nodes")
+    parser.add_argument("--n_shards", type=int, default=2, help="Number of shards")
+    parser.add_argument("--n_replicas", type=int, default=2, help="Number of replicas")
+    parser.add_argument("--data_size", type=int, default=2, help="Data size in TB")
+    parser.add_argument("--storage_per_node", type=int, default=1, help="Storage per node in TB")
+    args = parser.parse_args()
+
+    n_nodes = args.n_nodes
+    n_shards = args.n_shards
+    n_replicas = args.n_replicas
+    data_size = args.data_size
+    storage_per_node = args.storage_per_node
 
     cluster = Cluster(n_nodes, n_replicas, data_size, n_shards, storage_per_node)
     cluster.shard_allocator()
