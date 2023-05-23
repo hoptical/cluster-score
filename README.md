@@ -17,8 +17,10 @@ At the moment, these parameters have been considered:
 To calculate the cluster score, the below forumla is used:
 
 ```math
-inhomogeneity = std_{dev}(nodes shard size)
+inhomogeneity = std_{dev}(nodes\_shard\_size)
+```
 
+```math
 score = n_{replicas} / (1 + inhomogeneity)
 ```
 
