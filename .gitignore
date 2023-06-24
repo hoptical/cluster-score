@@ -1,2 +1,3 @@
 __pycache__
-.pre-commit-config.yaml
+.vscode
+.ruff_cache
